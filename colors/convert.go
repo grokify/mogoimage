@@ -114,7 +114,7 @@ func ColorAverageImage(i image.Image) color.Color {
 		uint8(math.Sqrt(float64(r)) / 0x101),
 		uint8(math.Sqrt(float64(g)) / 0x101),
 		uint8(math.Sqrt(float64(b)) / 0x101),
-		uint8(255),
+		uint8(255)}
 }
 
 /*
@@ -148,6 +148,5 @@ func ColorAverage(c ...color.Color) color.Color {
 		uint8(math.Sqrt(float64(r)) / 0x101),
 		uint8(math.Sqrt(float64(g)) / 0x101),
 		uint8(math.Sqrt(float64(b)) / 0x101),
-		uint8(255),
-	}
+		uint8(255)}
 }
