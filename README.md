@@ -1,4 +1,4 @@
-# mogo/image/imageutil
+# MoGo Image
 
 [![Docs][docs-godoc-svg]][docs-godoc-url]
 
