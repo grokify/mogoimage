@@ -90,7 +90,7 @@ func ColorToHex(c color.Color) string {
 }
 
 func ColorAverageImage(i image.Image) color.Color {
-	var r, g, b uint32
+	var r, g, b uint64
 
 	bounds := i.Bounds()
 
@@ -98,19 +98,23 @@ func ColorAverageImage(i image.Image) color.Color {
 		for x := bounds.Min.X; x < bounds.Max.X; x++ {
 			pr, pg, pb, _ := i.At(x, y).RGBA()
 
-			r += pr
-			g += pg
-			b += pb
+			r += uint64(pr * pr)
+			g += uint64(pg * pg)
+			b += uint64(pb * pg)
 		}
 	}
 
-	d := uint32(bounds.Dy() * bounds.Dx())
+	d := uint64(bounds.Dy() * bounds.Dx())
 
 	r /= d
 	g /= d
 	b /= d
 
-	return color.RGBA{uint8(r / 0x101), uint8(g / 0x101), uint8(b / 0x101), 255}
+	return color.RGBA{
+		uint8(math.Sqrt(float64(r)) / 0x101),
+		uint8(math.Sqrt(float64(g)) / 0x101),
+		uint8(math.Sqrt(float64(b)) / 0x101),
+		uint8(255),
 }
 
 /*
