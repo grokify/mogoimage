@@ -6,6 +6,12 @@ import (
 	"github.com/lucasb-eyer/go-colorful"
 )
 
+const (
+	Good   = "cie76"
+	Better = "cie94"
+	Best   = "cie2k"
+)
+
 func DistanceCIE2K(color1, color2 color.RGBA) float64 {
 	return ColorfulColor(color1).DistanceCIEDE2000(ColorfulColor(color2))
 }
