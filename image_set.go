@@ -1,5 +1,6 @@
 package imageutil
 
+/*
 import (
 	"image"
 	_ "image/jpeg"
@@ -100,3 +101,4 @@ type ImageStatsMulti struct {
 	MaxY int
 	SumY int
 }
+*/

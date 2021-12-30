@@ -1,5 +1,6 @@
 package imageutil
 
+/*
 import (
 	"image"
 	"image/color"
@@ -55,3 +56,4 @@ func RectangleBorderYMax(rect image.Rectangle, pixels uint) image.Rectangle {
 	}
 	return image.Rect(minX, rect.Min.Y, rect.Max.X, rect.Max.Y)
 }
+*/

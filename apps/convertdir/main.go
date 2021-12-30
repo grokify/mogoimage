@@ -5,7 +5,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/grokify/mogo/image/convertutil"
+	"github.com/grokify/mogoimage/convertutil"
 	"github.com/jessevdk/go-flags"
 )
 

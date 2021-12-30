@@ -6,7 +6,7 @@ import (
 	"image"
 	"log"
 
-	imageutil "github.com/grokify/mogoimage"
+	"github.com/grokify/mogo/image/imageutil"
 	"github.com/grokify/mogoimage/colors"
 	"github.com/jessevdk/go-flags"
 )

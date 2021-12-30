@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	imageutil "github.com/grokify/mogoimage"
+	"github.com/grokify/mogo/image/imageutil"
 )
 
 func main() {

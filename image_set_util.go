@@ -1,5 +1,6 @@
 package imageutil
 
+/*
 import (
 	"image"
 	"image/draw"
@@ -28,3 +29,4 @@ func MergeHorizontalRGBA(ims ImageMetaSet) image.Image {
 	}
 	return mergedRGBA
 }
+*/

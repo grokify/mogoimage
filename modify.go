@@ -1,5 +1,6 @@
 package imageutil
 
+/*
 import (
 	"fmt"
 	"image"
@@ -284,3 +285,4 @@ func AddBorderRGBA(img *image.RGBA, clr color.Color, width int) *image.RGBA {
 // https://code.google.com/archive/p/graphics-go/
 // https://github.com/BurntSushi/graphics-go
 // graphics.Rotate(dstImage, srcImage, &graphics.RotateOptions{math.Pi / 2.0}
+*/

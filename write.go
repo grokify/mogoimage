@@ -9,6 +9,7 @@ import (
 	"os"
 
 	"github.com/chai2010/webp"
+	"github.com/grokify/mogo/image/imageutil"
 )
 
 const (
@@ -17,11 +18,11 @@ const (
 )
 
 func ResizeFileJPEG(inputFile, outputFile string, outputWidth, outputHeight uint, quality int) error {
-	img, _, err := ReadImageFile(inputFile)
+	img, _, err := imageutil.ReadImageFile(inputFile)
 	if err != nil {
 		return err
 	}
-	img2 := Resize(outputWidth, outputHeight, img, ScalerBest())
+	img2 := imageutil.Resize(outputWidth, outputHeight, img, imageutil.ScalerBest())
 	return WriteFileJPEG(outputFile, img2, quality)
 }
 

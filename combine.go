@@ -1,5 +1,6 @@
 package imageutil
 
+/*
 import (
 	"fmt"
 	"image"
@@ -145,3 +146,4 @@ func MatrixRead(imglocations [][]string) (Matrix, error) {
 	}
 	return matrixImages, nil
 }
+*/

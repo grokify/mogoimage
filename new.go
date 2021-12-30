@@ -1,5 +1,6 @@
 package imageutil
 
+/*
 import (
 	"image"
 	"image/color"
@@ -20,3 +21,4 @@ func NewRGBATransparent(rect image.Rectangle) *image.RGBA {
 func NewRGBAWhite(rect image.Rectangle) *image.RGBA {
 	return NewRGBAColor(rect, color.RGBA{255, 255, 255, 255})
 }
+*/
