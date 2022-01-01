@@ -1,5 +1,6 @@
 package imageutil
 
+/*
 import (
 	"image"
 	"image/color"
@@ -83,3 +84,4 @@ func ImagePixelCount(img image.Image) int {
 	}
 	return w * h
 }
+*/
