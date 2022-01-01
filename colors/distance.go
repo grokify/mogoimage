@@ -1,32 +1,85 @@
 package colors
 
 import (
+	"fmt"
 	"image/color"
+	"strings"
 
 	"github.com/lucasb-eyer/go-colorful"
 )
 
 const (
-	Good   = "cie76"
-	Better = "cie94"
-	Best   = "cie2k"
+	DistanceGood   = "cie76"
+	DistanceBetter = "cie94"
+	DistanceBest   = "cie2k"
 )
 
-func DistanceCIE2K(color1, color2 color.RGBA) float64 {
-	return ColorfulColor(color1).DistanceCIEDE2000(ColorfulColor(color2))
+func Distance(alg string, c1, c2 color.Color) (float64, error) {
+	switch strings.ToLower(strings.TrimSpace(alg)) {
+	case DistanceGood:
+		return DistanceCIE76(c1, c2), nil
+	case DistanceBetter:
+		return DistanceCIE94(c1, c2), nil
+	case DistanceBest:
+		return DistanceCIE2K(c1, c2), nil
+	}
+	return 0.0, fmt.Errorf("algorithm not known [%s]", alg)
 }
 
-func DistanceCIE94(color1, color2 color.RGBA) float64 {
-	return ColorfulColor(color1).DistanceCIE94(ColorfulColor(color2))
+func MustDistance(alg string, c1, c2 color.Color) float64 {
+	d, err := Distance(alg, c1, c2)
+	if err != nil {
+		panic(fmt.Errorf("algorithm not known [%s]", alg))
+	}
+	return d
 }
 
-func DistanceCIE76(color1, color2 color.RGBA) float64 {
-	return ColorfulColor(color1).DistanceCIE76(ColorfulColor(color2))
+func Distances(alg string, comp color.Color, c []color.Color) ([]float64, error) {
+	dists := []float64{}
+	for _, cx := range c {
+		dist, err := Distance(alg, comp, cx)
+		if err != nil {
+			return dists, err
+		}
+		dists = append(dists, dist)
+	}
+	return dists, nil
 }
 
-func ColorfulColor(clr color.RGBA) colorful.Color {
+func DistancesMatrix(alg string, comp color.Color, c [][]color.Color) ([][]float64, error) {
+	distsM := [][]float64{}
+	for _, cx := range c {
+		dists, err := Distances(alg, comp, cx)
+		if err != nil {
+			return distsM, err
+		}
+		distsM = append(distsM, dists)
+	}
+	return distsM, nil
+}
+
+func DistanceCIE2K(c1, c2 color.Color) float64 {
+	return ColorfulColor(c1).DistanceCIEDE2000(ColorfulColor(c2))
+}
+
+func DistanceCIE94(c1, c2 color.Color) float64 {
+	return ColorfulColor(c1).DistanceCIE94(ColorfulColor(c2))
+}
+
+func DistanceCIE76(c1, c2 color.Color) float64 {
+	return ColorfulColor(c1).DistanceCIE76(ColorfulColor(c2))
+}
+
+func ColorfulColor(c color.Color) colorful.Color {
+	r, g, b, _ := c.RGBA()
 	return colorful.Color{
-		R: float64(clr.R) / 255.0,
-		G: float64(clr.G) / 255.0,
-		B: float64(clr.B) / 255.0}
+		R: float64(r/256) / 255.0,
+		G: float64(g/256) / 255.0,
+		B: float64(b/256) / 255.0}
+	/*
+		return colorful.Color{
+			R: float64(clr.R) / 255.0,
+			G: float64(clr.G) / 255.0,
+			B: float64(clr.B) / 255.0}c2
+	*/
 }
