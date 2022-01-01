@@ -1,5 +1,6 @@
 package colors
 
+/*
 import (
 	"fmt"
 	"image"
@@ -117,12 +118,8 @@ func ColorAverageImage(i image.Image) color.Color {
 		uint8(255)}
 }
 
-/*
-
-https://jimsaunders.net/2015/05/22/manipulating-colors-in-go.html
-https://sighack.com/post/averaging-rgb-colors-the-right-way
-
-*/
+// https://jimsaunders.net/2015/05/22/manipulating-colors-in-go.html
+// https://sighack.com/post/averaging-rgb-colors-the-right-way
 
 func ColorAverage(c ...color.Color) color.Color {
 	if len(c) == 0 {
@@ -150,3 +147,4 @@ func ColorAverage(c ...color.Color) color.Color {
 		uint8(math.Sqrt(float64(b)) / 0x101),
 		uint8(255)}
 }
+*/

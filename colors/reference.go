@@ -1,5 +1,6 @@
 package colors
 
+/*
 import (
 	"image/color"
 
@@ -50,3 +51,4 @@ func GoogleChartColorX(index uint64) color.RGBA {
 		int64(len(GoogleChartColorsHex)))
 	return GoogleChartColors[remainder]
 }
+*/
