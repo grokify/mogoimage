@@ -5,13 +5,15 @@ import (
 	"image/color"
 	"strings"
 
+	"github.com/grokify/mogo/image/colors"
 	"github.com/lucasb-eyer/go-colorful"
 )
 
 const (
-	DistanceGood   = "cie76"
-	DistanceBetter = "cie94"
-	DistanceBest   = "cie2k"
+	DistanceDefault = "cie76"
+	DistanceGood    = "cie76"
+	DistanceBetter  = "cie94"
+	DistanceBest    = "cie2k"
 )
 
 func Distance(alg string, c1, c2 color.Color) (float64, error) {
@@ -42,6 +44,27 @@ func Distances(alg string, comp color.Color, c []color.Color) ([]float64, error)
 			return dists, err
 		}
 		dists = append(dists, dist)
+	}
+	return dists, nil
+}
+
+type ColorDistance struct {
+	Color    color.Color
+	ColorHex string
+	Distance float64
+}
+
+func DistancesMore(alg string, comp color.Color, c []color.Color) ([]ColorDistance, error) {
+	dists := []ColorDistance{}
+	for _, cx := range c {
+		dist, err := Distance(alg, comp, cx)
+		if err != nil {
+			return dists, err
+		}
+		dists = append(dists, ColorDistance{
+			Color:    cx,
+			ColorHex: colors.ColorToHex(cx),
+			Distance: dist})
 	}
 	return dists, nil
 }
