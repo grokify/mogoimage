@@ -1,4 +1,4 @@
-package imageutil
+package mogoimage
 
 import (
 	"bytes"
