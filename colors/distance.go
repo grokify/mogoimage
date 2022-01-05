@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/grokify/mogo/image/colors"
+	colors2 "github.com/grokify/mogo/image/colors"
 	"github.com/lucasb-eyer/go-colorful"
 )
 
@@ -105,4 +106,33 @@ func ColorfulColor(c color.Color) colorful.Color {
 			G: float64(clr.G) / 255.0,
 			B: float64(clr.B) / 255.0}c2
 	*/
+}
+
+type ColorsDistance []color.Color
+
+func (cd ColorsDistance) Unique() ColorsDistance {
+	return colors2.SliceUnique(cd)
+}
+
+func (cd ColorsDistance) MatchBest(tolerance float64, c ...color.Color) bool {
+	if len(c) == 0 {
+		return false
+	}
+	absTolerance := AbsFloat64(tolerance)
+	for _, ctest := range c {
+		for _, cx := range cd {
+			if AbsFloat64(DistanceCIE2K(ctest, cx)) > absTolerance {
+				return false
+			}
+		}
+
+	}
+	return true
+}
+
+func AbsFloat64(v float64) float64 {
+	if v < 0 {
+		return -1.0 * v
+	}
+	return v
 }
