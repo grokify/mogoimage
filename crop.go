@@ -51,7 +51,9 @@ func CropImageColor(img image.Image, tolerance float64, want ...color.Color) (im
 	if int(cols[len(cols)-1]) == img.Bounds().Max.X-1 {
 		trimRight := 0
 		for x := len(cols) - 1; x >= 0; x-- {
-			if cols[x] == cols[x-1]+1 {
+			if x == 0 {
+				trimRight = int(cols[0])
+			} else if cols[x] == cols[x-1]+1 {
 				trimRight = int(cols[x-1])
 			} else {
 				break
@@ -81,7 +83,7 @@ func ColumnsFilter(img image.Image, tolerance float64, want ...color.Color) []ui
 			colColors = append(colColors, img.At(x, y))
 		}
 		colColorsUniqueDist := micolors.ColorsDistance(colors.SliceUnique(colColors))
-		if wantColorsUnique.MatchBest(0.05, colColorsUniqueDist...) {
+		if wantColorsUnique.MatchBest(tolerance, colColorsUniqueDist...) {
 			cols = append(cols, uint(x))
 		}
 	}
