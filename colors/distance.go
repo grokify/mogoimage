@@ -17,7 +17,7 @@ const (
 	DistanceBest    = "cie2k"
 
 	ToleranceNone        = 0.0
-	ToleranceDefaultBest = 0.05
+	ToleranceBestDefault = 0.05
 )
 
 func Distance(alg string, c1, c2 color.Color) (float64, error) {
