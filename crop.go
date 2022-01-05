@@ -59,7 +59,7 @@ func CropImageColor(img image.Image, tolerance float64, want ...color.Color) (im
 		}
 		newRect.Max.X = trimRight
 	}
-	if newRect == img.Bounds() {
+	if newRect.Eq(img.Bounds()) {
 		return img, nil
 	}
 	return CropImage(img, newRect)
