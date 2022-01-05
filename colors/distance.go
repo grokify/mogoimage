@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/grokify/mogo/image/colors"
-	colors2 "github.com/grokify/mogo/image/colors"
+	mcolors "github.com/grokify/mogo/image/colors"
 	"github.com/lucasb-eyer/go-colorful"
 )
 
@@ -114,7 +114,7 @@ func ColorfulColor(c color.Color) colorful.Color {
 type ColorsDistance []color.Color
 
 func (cd ColorsDistance) Unique() ColorsDistance {
-	return colors2.SliceUnique(cd)
+	return mcolors.SliceUnique(cd)
 }
 
 func (cd ColorsDistance) MatchBest(tolerance float64, c ...color.Color) bool {
