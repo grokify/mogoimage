@@ -28,8 +28,8 @@ func CropImage(img image.Image, crop image.Rectangle) (image.Image, error) {
 	return simg.SubImage(crop), nil
 }
 
-func CropImageColor(img image.Image, tolerance float64, want ...color.Color) (image.Image, error) {
-	cols := ColumnsFilter(img, tolerance, want...)
+func CropImageColor(img image.Image, tolerance float64, remove ...color.Color) (image.Image, error) {
+	cols := ColumnsFilter(img, tolerance, remove...)
 	if len(cols) == 0 {
 		return img, nil
 	}
