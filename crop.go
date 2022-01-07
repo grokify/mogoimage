@@ -34,9 +34,9 @@ func CropImageColor(img image.Image, tolerance float64, remove ...color.Color) (
 		return img, nil
 	}
 
-	newRect := img.Bounds().Bounds()
+	newRect := img.Bounds().Bounds().Canon()
 
-	if int(cols[0]) == img.Bounds().Min.X {
+	if int(cols[0]) == img.Bounds().Canon().Min.X {
 		trimLeft := 0
 		for x := 1; x < len(cols); x++ {
 			if cols[x] == cols[x-1]+1 {
@@ -48,7 +48,7 @@ func CropImageColor(img image.Image, tolerance float64, remove ...color.Color) (
 		}
 		newRect.Min.X = trimLeft
 	}
-	if int(cols[len(cols)-1]) == img.Bounds().Max.X-1 {
+	if int(cols[len(cols)-1]) == img.Bounds().Canon().Max.X-1 {
 		trimRight := 0
 		for x := len(cols) - 1; x >= 0; x-- {
 			if x == 0 {
@@ -61,7 +61,7 @@ func CropImageColor(img image.Image, tolerance float64, remove ...color.Color) (
 		}
 		newRect.Max.X = trimRight
 	}
-	if newRect.Eq(img.Bounds()) {
+	if newRect.Eq(img.Bounds().Canon()) {
 		return img, nil
 	}
 	return CropImage(img, newRect)
@@ -73,9 +73,9 @@ func CropImageColorCaption(img image.Image, paddingPct, tolerance float64, remov
 		return img, nil
 	}
 
-	newRect := img.Bounds().Bounds()
+	newRect := img.Bounds().Canon().Bounds()
 
-	if int(rows[len(rows)-1]) == img.Bounds().Max.Y-1 {
+	if int(rows[len(rows)-1]) == img.Bounds().Canon().Max.Y-1 {
 		trimBottom := 0
 		for y := len(rows) - 1; y >= 0; y-- {
 			if y == 0 {
@@ -87,7 +87,7 @@ func CropImageColorCaption(img image.Image, paddingPct, tolerance float64, remov
 			}
 		}
 		validatedTrimBottom := 0
-		for y := trimBottom; y < img.Bounds().Max.Y; y++ {
+		for y := trimBottom; y < img.Bounds().Canon().Max.Y; y++ {
 			if RowMatch(img, y, tolerance, remove...) {
 				validatedTrimBottom = y
 				break
@@ -95,11 +95,7 @@ func CropImageColorCaption(img image.Image, paddingPct, tolerance float64, remov
 		}
 		newRect.Max.Y = validatedTrimBottom
 	}
-	if newRect.Eq(img.Bounds()) {
-		return img, nil
-	}
-
-	if newRect.Eq(img.Bounds()) {
+	if newRect.Eq(img.Bounds().Canon()) {
 		return img, nil
 	}
 	return CropImage(img, newRect)
@@ -113,8 +109,8 @@ func ColumnsFilter(img image.Image, tolerance float64, want ...color.Color) []ui
 		return cols
 	}
 	wantColorsUnique := micolors.ColorsDistance(colors.SliceUnique(want))
-	minPt := img.Bounds().Min
-	maxPt := img.Bounds().Max
+	minPt := img.Bounds().Canon().Min
+	maxPt := img.Bounds().Canon().Max
 	for x := minPt.X; x < maxPt.X; x++ {
 		colColors := []color.Color{}
 		for y := minPt.Y; y < maxPt.Y; y++ {
@@ -136,8 +132,8 @@ func RowsFilter(img image.Image, tolerance float64, want ...color.Color) []uint 
 		return rows
 	}
 	wantColorsUnique := micolors.ColorsDistance(colors.SliceUnique(want))
-	minPt := img.Bounds().Min
-	maxPt := img.Bounds().Max
+	minPt := img.Bounds().Canon().Min
+	maxPt := img.Bounds().Canon().Max
 	for y := minPt.Y; y < maxPt.Y; y++ {
 		rowColors := []color.Color{}
 		for x := minPt.X; x < maxPt.X; x++ {
@@ -157,8 +153,8 @@ func RowMatch(img image.Image, rowIdx int, tolerance float64, want ...color.Colo
 		return false
 	}
 	wantColorsUnique := micolors.ColorsDistance(colors.SliceUnique(want))
-	minPt := img.Bounds().Min
-	maxPt := img.Bounds().Max
+	minPt := img.Bounds().Canon().Min
+	maxPt := img.Bounds().Canon().Max
 	if rowIdx >= maxPt.Y {
 		return false
 	}
@@ -179,8 +175,8 @@ func RowsFilterCaption(img image.Image, paddingPct, tolerance float64, want ...c
 		return rows
 	}
 	wantColorsUnique := micolors.ColorsDistance(colors.SliceUnique(want))
-	minPt := img.Bounds().Min
-	maxPt := img.Bounds().Max
+	minPt := img.Bounds().Canon().Min
+	maxPt := img.Bounds().Canon().Max
 	for y := minPt.Y; y < maxPt.Y; y++ {
 		rowColors := []color.Color{}
 		for x := minPt.X; x < maxPt.X; x++ {
