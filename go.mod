@@ -8,7 +8,7 @@ require (
 	github.com/disintegration/imaging v1.6.2
 	github.com/esimov/pigo v1.4.5
 	github.com/fogleman/gg v1.3.0
-	github.com/grokify/mogo v0.35.2
+	github.com/grokify/mogo v0.35.3
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/pkg/errors v0.9.1
