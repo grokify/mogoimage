@@ -2,7 +2,6 @@ package pigoutil
 
 import (
 	"errors"
-	"fmt"
 	"image"
 	"image/color"
 	"image/jpeg"
@@ -10,6 +9,7 @@ import (
 	"io"
 	"log"
 	"math"
+	"net/http"
 	"os"
 	"path/filepath"
 
@@ -17,6 +17,7 @@ import (
 	pigo "github.com/esimov/pigo/core"
 	"github.com/esimov/pigo/utils"
 	"github.com/fogleman/gg"
+	"github.com/grokify/mogo/net/httputilmore"
 	"golang.org/x/term"
 )
 
@@ -139,38 +140,23 @@ func (fd *FaceDetector) DetectFaces(source string) ([]pigo.Detection, error) {
 		ImageParams: *fd.imgParams,
 	}
 
-	if 1 == 0 {
-		contentType, err := utils.DetectFileContentType(fd.CascadeFile)
-		if err != nil {
-			fmt.Println("\nFaceDetector.DetectFaces.DetectFileContentType.error")
-			return nil, err
-		}
-		if contentType != "application/octet-stream" {
-			return nil, errors.New("the provided cascade classifier is not valid.")
-		}
-	}
-
 	// cascadeFile, err := ioutil.ReadFile(fd.CascadeFile)
-	cascadeFile, err := ReadCascade(fd.CascadeFile)
+	cascadeFileBytes, err := ReadCascade(fd.CascadeFile)
 	if err != nil {
 		return nil, err
 	}
 
 	// ContentType New
-	contentType, err := DetectContentTypeBytes(cascadeFile)
-	if err != nil {
-		fmt.Println("\nFaceDetector.DetectFaces.DetectFileContentType.error")
-		return nil, err
-	}
-	if contentType != "application/octet-stream" {
-		return nil, errors.New("the provided cascade classifier is not valid.")
+	contentType := http.DetectContentType(cascadeFileBytes)
+	if contentType != httputilmore.ContentTypeAppOctetStream {
+		return nil, errors.New("the provided cascade classifier is not valid")
 	}
 
 	p := pigo.NewPigo()
 
 	// Unpack the binary file. This will return the number of cascade trees,
 	// the tree depth, the threshold and the prediction from tree's leaf nodes.
-	classifier, err := p.Unpack(cascadeFile)
+	classifier, err := p.Unpack(cascadeFileBytes)
 	if err != nil {
 		return nil, err
 	}
