@@ -42,11 +42,11 @@ func main() {
 	fmt.Println("DONE")
 }
 
-func AddBorderAverageColor(img image.Image, width int) (*image.RGBA, error) {
+func AddBorderAverageColor(img image.Image, width int) (image.Image, error) {
 	imgRGBA := imageutil.ImageToRGBA(img)
 	if width < 1 {
 		return imgRGBA, errors.New("zero width border")
 	}
 	avgClr := colors.ColorAverageImage(imgRGBA)
-	return imageutil.AddBorderRGBAImage(img, avgClr, width), nil
+	return imageutil.AddBorder(imageutil.ImageToRGBA(img), avgClr, width), nil
 }
