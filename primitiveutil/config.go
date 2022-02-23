@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// Config use with `-i`, `-o`, and `-n`.
 type Config struct {
 	Input      string    `short:"i" description:"input image path" required:"true"`
 	Outputs    FlagArray `short:"o" description:"output image path" required:"true"`
