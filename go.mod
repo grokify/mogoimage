@@ -3,14 +3,17 @@ module github.com/grokify/mogoimage
 go 1.16
 
 require (
-	github.com/chai2010/webp v1.1.0
+	github.com/andybons/gogif v0.0.0-20140526152223-16d573594812
+	github.com/chai2010/webp v1.1.1
 	github.com/cheekybits/is v0.0.0-20150225183255-68e9c0620927 // indirect
 	github.com/disintegration/imaging v1.6.2
 	github.com/esimov/pigo v1.4.5
 	github.com/fogleman/gg v1.3.0
-	github.com/grokify/mogo v0.35.7
+	github.com/fogleman/primitive v0.0.0-20200504002142-0373c216458b
+	github.com/grokify/mogo v0.36.1
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/lucasb-eyer/go-colorful v1.2.0
+	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/pkg/errors v0.9.1
 	github.com/rustyoz/Mtransform v0.0.0-20190224104252-60c8c35a3681 // indirect
 	github.com/rustyoz/genericlexer v0.0.0-20190224115003-eb82fd2987bd // indirect
