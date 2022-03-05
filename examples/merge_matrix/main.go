@@ -9,10 +9,10 @@ import (
 
 func main() {
 	urlsmatrix := [][]string{
-		{"https://raw.githubusercontent.com/grokify/mogoimage/master/read_testdata/gopher_appengine_color.jpg"},
+		{"https://raw.githubusercontent.com/grokify/goimage/master/read_testdata/gopher_appengine_color.jpg"},
 		{
-			"https://raw.githubusercontent.com/grokify/mogoimage/master/read_testdata/gopher_color.jpg",
-			"https://raw.githubusercontent.com/grokify/mogoimage/master/read_testdata/gopher_color.jpg"},
+			"https://raw.githubusercontent.com/grokify/goimage/master/read_testdata/gopher_color.jpg",
+			"https://raw.githubusercontent.com/grokify/goimage/master/read_testdata/gopher_color.jpg"},
 	}
 
 	outfile := "_merged.jpg"

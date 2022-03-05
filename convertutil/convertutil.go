@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"strings"
 
+	imageutil "github.com/grokify/goimage"
 	"github.com/grokify/mogo/math/ratio"
 	"github.com/grokify/mogo/os/executil"
 	"github.com/grokify/mogo/type/stringsutil"
-	imageutil "github.com/grokify/mogoimage"
 )
 
 /*

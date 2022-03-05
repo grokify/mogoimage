@@ -1,4 +1,4 @@
-module github.com/grokify/mogoimage
+module github.com/grokify/goimage
 
 go 1.16
 

@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
+	"github.com/grokify/goimage/primitiveutil"
 	"github.com/grokify/mogo/fmt/fmtutil"
-	"github.com/grokify/mogoimage/primitiveutil"
 	"github.com/jessevdk/go-flags"
 )
 

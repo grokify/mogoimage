@@ -1,4 +1,4 @@
-package mogoimage
+package goimage
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 
 	"github.com/grokify/mogo/image/colors"
 
-	micolors "github.com/grokify/mogoimage/colors"
+	micolors "github.com/grokify/goimage/colors"
 )
 
 // CropImage takes an image and crops it to the specified rectangle. `CropImage`

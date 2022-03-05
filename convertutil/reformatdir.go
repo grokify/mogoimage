@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/grokify/goimage"
 	"github.com/grokify/mogo/io/ioutilmore"
 	"github.com/grokify/mogo/os/osutil"
-	imageutil "github.com/grokify/mogoimage"
 	"github.com/pkg/errors"
 )
 
@@ -76,7 +76,7 @@ func reformatImagesSubdir(baseSrcDir, baseOutDir, dirPart string, copyType CopyT
 			thisSrcFile := filepath.Join(thisSrcDir, file.Name())
 			thisOutFile := filepath.Join(thisOutDir, file.Name())
 
-			if !imageutil.IsImageExt(thisSrcFile) {
+			if !goimage.IsImageExt(thisSrcFile) {
 				continue
 			}
 			if !rewrite {
@@ -115,7 +115,7 @@ func reformatImagesSubdir(baseSrcDir, baseOutDir, dirPart string, copyType CopyT
 }
 
 func reformatImagesSubdirFile(thisSrcFile, thisOutFile string, copyType CopyType, rewrite bool) error {
-	if !imageutil.IsImageExt(thisSrcFile) {
+	if !goimage.IsImageExt(thisSrcFile) {
 		return nil
 	}
 	if !rewrite {

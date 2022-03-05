@@ -1,4 +1,4 @@
-package mogoimage
+package goimage
 
 import (
 	"image"

@@ -13,8 +13,8 @@ import (
 	pigo "github.com/esimov/pigo/core"
 	"github.com/esimov/pigo/utils"
 	"github.com/fogleman/gg"
+	"github.com/grokify/goimage/facialrecog/pigoutil"
 	"github.com/grokify/mogo/type/stringsutil"
-	"github.com/grokify/mogoimage/facialrecog/pigoutil"
 	"golang.org/x/term"
 )
 
