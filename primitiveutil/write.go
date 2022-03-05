@@ -10,10 +10,15 @@ import (
 	"time"
 
 	"github.com/fogleman/primitive/primitive"
+	"github.com/grokify/mogo/type/stringsutil"
 	"github.com/nfnt/resize"
 )
 
-func (cfg Config) Create() error {
+func (cfg Config) Create(filenames ...string) error {
+	if len(filenames) > 0 {
+		cfg.Outputs = append(cfg.Outputs, filenames...)
+		cfg.Outputs = stringsutil.SliceDedupe(cfg.Outputs)
+	}
 	// set log level
 	if len(cfg.Verbose) == 1 {
 		primitive.LogLevel = 1
