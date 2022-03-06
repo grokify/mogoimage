@@ -18,7 +18,7 @@ func main() {
 
 	fmtutil.PrintJSON(cfg)
 
-	err = cfg.Create()
+	_, err = cfg.Create()
 	if err != nil {
 		log.Fatal(err)
 	}

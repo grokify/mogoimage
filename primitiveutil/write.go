@@ -10,15 +10,18 @@ import (
 	"time"
 
 	"github.com/fogleman/primitive/primitive"
+	"github.com/grokify/mogo/fmt/fmtutil"
 	"github.com/grokify/mogo/type/stringsutil"
 	"github.com/nfnt/resize"
 )
 
-func (cfg Config) Create(filenames ...string) error {
+func (cfg *Config) Create(filenames ...string) ([]error, error) {
+	cfg.Inflate()
 	if len(filenames) > 0 {
 		cfg.Outputs = append(cfg.Outputs, filenames...)
 		cfg.Outputs = stringsutil.SliceDedupe(cfg.Outputs)
 	}
+	fmtutil.PrintJSON(cfg)
 	// set log level
 	if len(cfg.Verbose) == 1 {
 		primitive.LogLevel = 1
@@ -32,7 +35,7 @@ func (cfg Config) Create(filenames ...string) error {
 	// read input image
 	input, err := primitive.LoadImage(cfg.Input)
 	if err != nil {
-		return err
+		return []error{err}, err
 	}
 
 	// scale down input image if needed
@@ -48,7 +51,7 @@ func (cfg Config) Create(filenames ...string) error {
 	} else {
 		bg = primitive.MakeHexColor(cfg.Background)
 	}
-
+	fmt.Println("H1")
 	// run algorithm
 	model := primitive.NewModel(input, bg, cfg.OutputSize, cfg.Workers)
 	primitive.Log(1, "%d: t=%.3f, score=%.6f\n", 0, 0.0, model.Score)
@@ -102,7 +105,7 @@ func (cfg Config) Create(filenames ...string) error {
 			}
 		}
 	}
-	return nil
+	return []error{}, nil
 }
 
 func errorMessage(message string) bool {

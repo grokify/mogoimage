@@ -23,7 +23,26 @@ type Config struct {
 	Configs    ShapeConfigs
 }
 
+func (c *Config) SetDefaults() {
+	if c.Number <= 0 {
+		c.Number = 1
+	}
+	if c.Alpha <= 0 {
+		c.Alpha = 128
+	}
+	if c.InputSize <= 0 {
+		c.InputSize = 256
+	}
+	if c.OutputSize <= 0 {
+		c.OutputSize = 1024
+	}
+	if c.Nth <= 1 {
+		c.Nth = 1
+	}
+}
+
 func (c *Config) Inflate() {
+	c.SetDefaults()
 	c.Configs = []ShapeConfig{
 		{
 			Count:  c.Number,
