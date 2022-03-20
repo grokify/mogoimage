@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"image"
 	"log"
 	"strings"
 
@@ -35,7 +36,13 @@ func main() {
 		fmtutil.PrintJSON(imSet.Stats())
 	}
 
-	merged := imageutil.MergeHorizontalRGBA(imSet)
+	imgs := []image.Image{}
+	for _, im := range imSet.ImageMetas {
+		imgs = append(imgs, im.Image)
+	}
+
+	//merged := imageutil.MergeHorizontalRGBA(imSet)
+	merged := imageutil.MergeYSameX(imgs, true)
 
 	filename := strings.TrimSpace(opts.Outputfile)
 	if len(filename) == 0 {
