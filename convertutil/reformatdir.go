@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"github.com/grokify/goimage"
+	"github.com/grokify/mogo/errors/errorsutil"
 	"github.com/grokify/mogo/io/ioutilmore"
 	"github.com/grokify/mogo/os/osutil"
-	"github.com/pkg/errors"
 )
 
 const (
@@ -129,7 +129,7 @@ func reformatImagesSubdirFile(thisSrcFile, thisOutFile string, copyType CopyType
 	case PDFFormat:
 		_, _, err := ConvertToPDF(thisSrcFile, thisOutFile)
 		if err != nil {
-			return errors.Wrap(err, fmt.Sprintf("ConvertToPDF failed for [%s]", thisSrcFile))
+			return errorsutil.Wrap(err, fmt.Sprintf("ConvertToPDF failed for [%s]", thisSrcFile))
 		}
 	case KindleFormat:
 		_, stderr, err := ConvertToKindle(thisSrcFile, thisOutFile)
