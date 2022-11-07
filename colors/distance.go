@@ -127,7 +127,6 @@ func (cd ColorsDistance) MatchBest(tolerance float64, c ...color.Color) bool {
 				return false
 			}
 		}
-
 	}
 	return true
 }
