@@ -134,7 +134,7 @@ func main() {
 	start := time.Now()
 
 	// Progress indicator
-	ind := utils.NewProgressIndicator("Detecting faces...", time.Millisecond*100)
+	ind := utils.NewSpinner("Detecting faces...", time.Millisecond*100)
 	ind.Start()
 
 	det = &pigoutil.FaceDetector{
