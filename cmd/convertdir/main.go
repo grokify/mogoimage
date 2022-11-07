@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/grokify/goimage/convertutil"
-	"github.com/jessevdk/go-flags"
+	flags "github.com/jessevdk/go-flags"
 )
 
 type Options struct {

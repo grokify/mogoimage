@@ -6,7 +6,7 @@ import (
 
 	"github.com/grokify/goimage"
 	"github.com/grokify/mogo/image/imageutil"
-	"github.com/jessevdk/go-flags"
+	flags "github.com/jessevdk/go-flags"
 )
 
 type Options struct {

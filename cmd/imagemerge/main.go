@@ -8,7 +8,7 @@ import (
 
 	"github.com/grokify/mogo/fmt/fmtutil"
 	"github.com/grokify/mogo/image/imageutil"
-	"github.com/jessevdk/go-flags"
+	flags "github.com/jessevdk/go-flags"
 )
 
 type Options struct {
