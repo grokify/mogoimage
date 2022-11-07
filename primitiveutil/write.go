@@ -10,7 +10,6 @@ import (
 	"time"
 
 	"github.com/fogleman/primitive/primitive"
-	"github.com/grokify/mogo/fmt/fmtutil"
 	"github.com/grokify/mogo/type/stringsutil"
 	"github.com/nfnt/resize"
 )
@@ -21,7 +20,7 @@ func (cfg *Config) Create(filenames ...string) ([]error, error) {
 		cfg.Outputs = append(cfg.Outputs, filenames...)
 		cfg.Outputs = stringsutil.SliceDedupe(cfg.Outputs)
 	}
-	fmtutil.PrintJSON(cfg)
+	// fmtutil.MustPrintJSON(cfg)
 	// set log level
 	if len(cfg.Verbose) == 1 {
 		primitive.LogLevel = 1
