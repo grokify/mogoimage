@@ -5,7 +5,7 @@ import (
 
 	"github.com/grokify/goimage/primitiveutil"
 	"github.com/grokify/mogo/fmt/fmtutil"
-	"github.com/jessevdk/go-flags"
+	flags "github.com/jessevdk/go-flags"
 )
 
 func main() {
