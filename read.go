@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"image"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -62,7 +61,7 @@ func ReadImageFile(filename string) (image.Image, string, error) {
 }
 
 func DecodeWebpRGBA(r io.Reader) (image.Image, string, error) {
-	bytes, err := ioutil.ReadAll(r)
+	bytes, err := io.ReadAll(r)
 	if err != nil {
 		return nil, "", err
 	}

@@ -5,7 +5,6 @@ import (
 	"image"
 	"image/jpeg"
 	"image/png"
-	"io/ioutil"
 	"os"
 
 	"github.com/chai2010/webp"
@@ -62,5 +61,5 @@ func WriteFileWEBP(filename string, img image.Image, lossless bool, perm os.File
 	if err != nil {
 		return err
 	}
-	return ioutil.WriteFile(filename, buf.Bytes(), perm)
+	return os.WriteFile(filename, buf.Bytes(), perm)
 }
