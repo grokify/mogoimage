@@ -23,37 +23,37 @@ type Config struct {
 	Configs    ShapeConfigs
 }
 
-func (c *Config) SetDefaults() {
-	if c.Number <= 0 {
-		c.Number = 1
+func (cfg *Config) SetDefaults() {
+	if cfg.Number <= 0 {
+		cfg.Number = 1
 	}
-	if c.Alpha <= 0 {
-		c.Alpha = 128
+	if cfg.Alpha <= 0 {
+		cfg.Alpha = 128
 	}
-	if c.InputSize <= 0 {
-		c.InputSize = 256
+	if cfg.InputSize <= 0 {
+		cfg.InputSize = 256
 	}
-	if c.OutputSize <= 0 {
-		c.OutputSize = 1024
+	if cfg.OutputSize <= 0 {
+		cfg.OutputSize = 1024
 	}
-	if c.Nth <= 1 {
-		c.Nth = 1
+	if cfg.Nth <= 1 {
+		cfg.Nth = 1
 	}
 }
 
-func (c *Config) Inflate() {
-	c.SetDefaults()
-	c.Configs = []ShapeConfig{
+func (cfg *Config) Inflate() {
+	cfg.SetDefaults()
+	cfg.Configs = []ShapeConfig{
 		{
-			Count:  c.Number,
-			Mode:   c.Mode,
-			Alpha:  c.Alpha,
-			Repeat: c.Repeat,
+			Count:  cfg.Number,
+			Mode:   cfg.Mode,
+			Alpha:  cfg.Alpha,
+			Repeat: cfg.Repeat,
 		},
 	}
 	// determine worker count
-	if c.Workers < 1 {
-		c.Workers = runtime.NumCPU()
+	if cfg.Workers < 1 {
+		cfg.Workers = runtime.NumCPU()
 	}
 }
 

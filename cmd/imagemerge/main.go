@@ -24,7 +24,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmtutil.PrintJSON(opts.Images)
+	fmtutil.MustPrintJSON(opts.Images)
 
 	imSet, err := imageutil.NewImageSetFiles(opts.Images)
 	if err != nil {
@@ -32,8 +32,8 @@ func main() {
 	}
 
 	if len(opts.Verbose) > 0 {
-		fmtutil.PrintJSON(imSet)
-		fmtutil.PrintJSON(imSet.Stats())
+		fmtutil.MustPrintJSON(imSet)
+		fmtutil.MustPrintJSON(imSet.Stats())
 	}
 
 	imgs := []image.Image{}

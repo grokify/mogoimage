@@ -16,7 +16,7 @@ func main() {
 	}
 	cfg.Inflate()
 
-	fmtutil.PrintJSON(cfg)
+	fmtutil.MustPrintJSON(cfg)
 
 	_, err = cfg.Create()
 	if err != nil {

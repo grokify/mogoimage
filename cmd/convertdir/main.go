@@ -19,7 +19,7 @@ type Options struct {
 func (o *Options) Validate() error {
 	o.Format = strings.ToLower(strings.TrimSpace(o.Format))
 	if o.Format != "kindle" && o.Format != "pdf" {
-		return fmt.Errorf("Invalid Output Format [%s]", o.Format)
+		return fmt.Errorf("invalid output format [%s]", o.Format)
 	}
 	return nil
 }
@@ -33,10 +33,7 @@ func (o *Options) TypeFormat() convertutil.CopyType {
 }
 
 func (o *Options) Rewrite() bool {
-	if len(o.SrcRewrite) > 0 {
-		return true
-	}
-	return false
+	return len(o.SrcRewrite) > 0
 }
 
 func main() {
