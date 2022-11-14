@@ -73,7 +73,7 @@ func DecodeWebpRGBA(r io.Reader) (image.Image, string, error) {
 }
 
 func ReadImageHTTP(imageURL string) (image.Image, string, error) {
-	resp, err := http.Get(imageURL)
+	resp, err := http.Get(imageURL) // #nosec G107
 	if err != nil {
 		return image.NewRGBA(image.Rectangle{}), "", err
 	} else if resp.StatusCode >= 300 {
