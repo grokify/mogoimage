@@ -22,8 +22,8 @@ const (
 )
 
 func ReadImageAny(location string) (image.Image, string, error) {
-	if isHttpUri(location) {
-		return ReadImageHttp(location)
+	if isHTTPURI(location) {
+		return ReadImageHTTP(location)
 	}
 	return ReadImageFile(location)
 }
@@ -40,7 +40,7 @@ func ReadImages(locations []string) ([]image.Image, error) {
 	return images, nil
 }
 
-func isHttpUri(location string) bool {
+func isHTTPURI(location string) bool {
 	try := strings.ToLower(strings.TrimSpace(location))
 	if strings.Index(try, "http://") == 0 || strings.Index(try, "https://") == 0 {
 		return true
@@ -72,8 +72,8 @@ func DecodeWebpRGBA(r io.Reader) (image.Image, string, error) {
 	return img, FormatNameWEBP, nil
 }
 
-func ReadImageHttp(imageUrl string) (image.Image, string, error) {
-	resp, err := http.Get(imageUrl)
+func ReadImageHTTP(imageURL string) (image.Image, string, error) {
+	resp, err := http.Get(imageURL)
 	if err != nil {
 		return image.NewRGBA(image.Rectangle{}), "", err
 	} else if resp.StatusCode >= 300 {

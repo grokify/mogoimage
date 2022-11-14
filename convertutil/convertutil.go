@@ -163,7 +163,7 @@ const (
 // exit status 1: convert: no decode delegate for this image format `' @ error/constitute.c/ReadImage/501.
 func CheckError(err error, stderr bytes.Buffer) error {
 	if err.Error() == convertErrorStatus &&
-		strings.Index(stderr.String(), convertError) > -1 {
+		strings.Contains(stderr.String(), convertError) {
 		return nil
 	}
 	if stringsutil.SubstringIsSuffix(err.Error(), convertErrorStatus) {

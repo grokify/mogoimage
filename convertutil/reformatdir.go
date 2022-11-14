@@ -52,7 +52,7 @@ func reformatImagesSubdir(baseSrcDir, baseOutDir, dirPart string, copyType CopyT
 			return err
 		}
 		if !isDir {
-			return fmt.Errorf("Need Dir [%s]", thisSrcDir)
+			return fmt.Errorf("need dir [%s]", thisSrcDir)
 		}
 	}
 

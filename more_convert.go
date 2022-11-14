@@ -12,6 +12,6 @@ func ToPalettedMedianCut(src image.Image) *image.Paletted {
 	}
 	pimg := image.NewPaletted(src.Bounds(), nil)
 	quantizer := gogif.MedianCutQuantizer{NumColor: 256}
-	quantizer.Quantize(pimg, src.Bounds(), src, image.ZP)
+	quantizer.Quantize(pimg, src.Bounds(), src, image.Point{})
 	return pimg
 }
