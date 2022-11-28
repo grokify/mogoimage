@@ -208,7 +208,6 @@ func main() {
 			}
 			out = f
 		}
-
 	}
 	ind.StopMsg = fmt.Sprintf("Detecting faces... %s✔%s", successColor, defaultColor)
 	ind.Stop()

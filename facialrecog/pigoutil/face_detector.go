@@ -89,6 +89,9 @@ func (fd *FaceDetector) DetectFaces(source string) ([]pigo.Detection, error) {
 	// Check if source path is a local image or URL.
 	if utils.IsValidUrl(source) {
 		src, err := utils.DownloadImage(source)
+		if err != nil {
+			return nil, err
+		}
 		// Close and remove the generated temporary file.
 		defer src.Close()
 		defer os.Remove(src.Name())
