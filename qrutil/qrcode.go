@@ -4,7 +4,7 @@ package qrutil
 import (
 	"image"
 
-	"github.com/skip2/go-qrcode"
+	qrcode "github.com/skip2/go-qrcode"
 )
 
 // New creates a new `*qrcode.QRCode` using `qrcode.QRCode`
