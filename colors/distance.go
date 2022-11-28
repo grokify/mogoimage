@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/grokify/mogo/image/colors"
-	"github.com/lucasb-eyer/go-colorful"
+	colorful "github.com/lucasb-eyer/go-colorful"
 )
 
 const (
