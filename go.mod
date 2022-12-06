@@ -15,7 +15,7 @@ require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/rustyoz/svg v0.0.0-20200706102315-fe1aeca2ba20
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
-	golang.org/x/term v0.2.0
+	golang.org/x/term v0.3.0
 )
 
 require (
