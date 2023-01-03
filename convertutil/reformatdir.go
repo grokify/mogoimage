@@ -8,7 +8,6 @@ import (
 
 	"github.com/grokify/goimage"
 	"github.com/grokify/mogo/errors/errorsutil"
-	"github.com/grokify/mogo/io/ioutilmore"
 	"github.com/grokify/mogo/os/osutil"
 )
 
@@ -60,7 +59,7 @@ func reformatImagesSubdir(baseSrcDir, baseOutDir, dirPart string, copyType CopyT
 		return err
 	}
 
-	sdirs, files, err := ioutilmore.ReadDirSplit(thisSrcDir, false)
+	sdirs, files, err := osutil.ReadDirSplit(thisSrcDir, false)
 	if err != nil {
 		return err
 	}
