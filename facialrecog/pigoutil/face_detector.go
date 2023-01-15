@@ -17,7 +17,7 @@ import (
 	pigo "github.com/esimov/pigo/core"
 	"github.com/esimov/pigo/utils"
 	"github.com/fogleman/gg"
-	"github.com/grokify/mogo/net/httputilmore"
+	"github.com/grokify/mogo/net/http/httputilmore"
 	"golang.org/x/term"
 )
 
