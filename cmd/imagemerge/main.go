@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"image"
+	"image/jpeg"
 	"log"
 	"strings"
 
@@ -49,7 +50,9 @@ func main() {
 		filename = "merged.jpg"
 	}
 
-	err = imageutil.WriteFileJPEG(filename, merged, opts.Quality)
+	err = imageutil.WriteFileJPEG(filename, merged, &imageutil.JPEGEncodeOptions{
+		Options: &jpeg.Options{Quality: opts.Quality},
+	})
 	if err != nil {
 		log.Fatal(err)
 	}

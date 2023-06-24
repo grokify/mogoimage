@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"image/jpeg"
 	"log"
 
 	"github.com/grokify/goimage"
@@ -28,7 +29,13 @@ func main() {
 	}
 	fmt.Printf("GOT TYPE [%s]\n", ext)
 
-	err = imageutil.WriteFileJPEG(opts.Output, img, int(opts.JPEGQuality))
+	if opts.JPEGQuality == 0 {
+		opts.JPEGQuality = jpeg.DefaultQuality
+	}
+
+	err = imageutil.WriteFileJPEG(opts.Output, img,
+		&imageutil.JPEGEncodeOptions{
+			Options: &jpeg.Options{Quality: int(opts.JPEGQuality)}})
 	if err != nil {
 		log.Fatal(err)
 	}

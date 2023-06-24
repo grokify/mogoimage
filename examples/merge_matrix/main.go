@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"image/jpeg"
 	"log"
 
 	"github.com/grokify/mogo/image/imageutil"
@@ -23,7 +24,10 @@ func main() {
 	}
 
 	err = imageutil.WriteFileJPEG(
-		outfile, matrix.Merge(true, true), imageutil.JPEGQualityMax)
+		outfile, matrix.Merge(true, true),
+		&imageutil.JPEGEncodeOptions{
+			Options: &jpeg.Options{Quality: imageutil.JPEGQualityMax},
+		})
 	if err != nil {
 		log.Fatal(err)
 	}

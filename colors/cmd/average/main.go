@@ -1,9 +1,7 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"image"
 	"log"
 
 	"github.com/grokify/mogo/image/colors"
@@ -30,11 +28,8 @@ func main() {
 	fmt.Printf("COLOR [%s]\n", colors.ColorToHex(avgClr))
 
 	if 1 == 0 {
-		img2, err := AddBorderAverageColor(img, 100)
-		if err != nil {
-			log.Fatal(err)
-		}
-		err = imageutil.WriteFileJPEG("_with_border.jpg", img2, -1)
+		img2 := imageutil.AddBorderAverageColor(img, 100)
+		err = imageutil.WriteFileJPEG("_with_border.jpg", img2, nil)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -42,11 +37,13 @@ func main() {
 	fmt.Println("DONE")
 }
 
-func AddBorderAverageColor(img image.Image, width int) (image.Image, error) {
+/*
+func AddBorderAverageColor(img image.Image, width uint) (image.Image, error) {
 	imgRGBA := imageutil.ImageToRGBA(img)
 	if width < 1 {
 		return imgRGBA, errors.New("zero width border")
 	}
 	avgClr := colors.ColorAverageImage(imgRGBA)
-	return imageutil.AddBorder(imageutil.ImageToRGBA(img), avgClr, uint(width)), nil
+	return imageutil.AddBorder(imageutil.ImageToRGBA(img), avgClr, width), nil
 }
+*/
