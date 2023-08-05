@@ -33,7 +33,9 @@ func main() {
 		opts.JPEGQuality = jpeg.DefaultQuality
 	}
 
-	err = imageutil.WriteFileJPEG(opts.Output, img,
+	i2 := imageutil.Image{Image: img}
+
+	err = i2.WriteJPEGFile(opts.Output,
 		&imageutil.JPEGEncodeOptions{
 			Options: &jpeg.Options{Quality: int(opts.JPEGQuality)}})
 	if err != nil {

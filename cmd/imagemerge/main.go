@@ -50,7 +50,7 @@ func main() {
 		filename = "merged.jpg"
 	}
 
-	err = imageutil.WriteFileJPEG(filename, merged, &imageutil.JPEGEncodeOptions{
+	err = imageutil.Image{Image: merged}.WriteJPEGFile(filename, &imageutil.JPEGEncodeOptions{
 		Options: &jpeg.Options{Quality: opts.Quality},
 	})
 	if err != nil {

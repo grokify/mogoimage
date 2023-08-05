@@ -27,7 +27,7 @@ func main() {
 	imgTop = imageutil.AddBackgroundWhite(imgTop)
 	imgTop = imageutil.Resize(120, 0, imgTop, imageutil.ScalerBest())
 	imgOut := imageutil.OverlayMore(imgBkg, imgTop, "middleleft", 0, 0)
-	err = imageutil.WriteFilePNG(fileOut, imgOut)
+	err = imageutil.Image{Image: imgOut}.WritePNGFile(fileOut)
 	if err != nil {
 		log.Fatal(err)
 	}

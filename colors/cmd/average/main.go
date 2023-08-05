@@ -29,7 +29,7 @@ func main() {
 
 	if 1 == 0 {
 		img2 := imageutil.AddBorderAverageColor(img, 100)
-		err = imageutil.WriteFileJPEG("_with_border.jpg", img2, nil)
+		err = imageutil.Image{Image: img2}.WriteJPEGFile("_with_border.jpg", nil)
 		if err != nil {
 			log.Fatal(err)
 		}

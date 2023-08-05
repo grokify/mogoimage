@@ -23,8 +23,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = imageutil.WriteFileJPEG(
-		outfile, matrix.Merge(true, true),
+	i2 := imageutil.Image{Image: matrix.Merge(true, true)}
+	err = i2.WriteJPEGFile(
+		outfile,
 		&imageutil.JPEGEncodeOptions{
 			Options: &jpeg.Options{Quality: imageutil.JPEGQualityMax},
 		})

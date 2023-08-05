@@ -90,7 +90,7 @@ func WriteJPEG(w io.Writer, r ioutil.AtReader, opt *jpeg.Options) error {
 		return errorsutil.Wrap(err, "failed to parse HEIC io.Reader using goheif.Decode()")
 	}
 
-	err = imageutil.WriteJPEG(w, img, &imageutil.JPEGEncodeOptions{
+	err = imageutil.Image{Image: img}.WriteJPEG(w, &imageutil.JPEGEncodeOptions{
 		Options: opt,
 		Exif:    exif,
 	})
