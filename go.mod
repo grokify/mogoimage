@@ -12,20 +12,17 @@ require (
 	github.com/esimov/pigo v1.4.6
 	github.com/fogleman/gg v1.3.0
 	github.com/fogleman/primitive v0.0.0-20200504002142-0373c216458b
-	github.com/grokify/mogo v0.60.1
+	github.com/grokify/mogo v0.62.3
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/rustyoz/svg v0.0.0-20231005023235-488fa3e5c062
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
-	golang.org/x/term v0.14.0
+	golang.org/x/term v0.15.0
 )
 
 require (
-	github.com/buger/jsonparser v1.1.1 // indirect
-	github.com/go-logfmt/logfmt v0.6.0 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
-	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/huandu/xstrings v1.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -33,10 +30,8 @@ require (
 	github.com/rustyoz/Mtransform v0.0.0-20190224104252-60c8c35a3681 // indirect
 	github.com/rustyoz/genericlexer v0.0.0-20190224115003-eb82fd2987bd // indirect
 	github.com/rwcarlsen/goexif v0.0.0-20190401172101-9e8deecbddbd // indirect
-	github.com/valyala/fastjson v1.6.4 // indirect
-	golang.org/x/exp v0.0.0-20231110203233-9a3e6036ecaa // indirect
+	golang.org/x/exp v0.0.0-20231214170342-aacd6d4b4611 // indirect
 	golang.org/x/image v0.14.0 // indirect
-	golang.org/x/sys v0.14.0 // indirect
+	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
-	gopkg.in/oleiade/reflections.v1 v1.0.0 // indirect
 )
