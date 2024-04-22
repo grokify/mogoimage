@@ -14,7 +14,7 @@ require (
 	github.com/esimov/pigo v1.4.6
 	github.com/fogleman/gg v1.3.0
 	github.com/fogleman/primitive v0.0.0-20200504002142-0373c216458b
-	github.com/grokify/mogo v0.63.8
+	github.com/grokify/mogo v0.63.9
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
@@ -46,7 +46,7 @@ require (
 	github.com/unidoc/timestamp v0.0.0-20200412005513-91597fd3793a // indirect
 	github.com/unidoc/unitype v0.4.0 // indirect
 	golang.org/x/crypto v0.22.0 // indirect
-	golang.org/x/exp v0.0.0-20240409090435-93d18d7e34b8 // indirect
+	golang.org/x/exp v0.0.0-20240416160154-fe59bbe5cc7f // indirect
 	golang.org/x/image v0.15.0 // indirect
 	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/sys v0.19.0 // indirect
