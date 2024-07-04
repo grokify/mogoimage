@@ -9,7 +9,6 @@ toolchain go1.22.3
 require (
 	github.com/adrium/goheif v0.0.0-20230113233934-ca402e77a786
 	github.com/andybons/gogif v0.0.0-20140526152223-16d573594812
-	github.com/brunsgaard/go-pdfium-render v0.0.0-20190126055834-b01df5200e99
 	github.com/chai2010/webp v1.1.1
 	github.com/disintegration/imaging v1.6.2
 	github.com/esimov/pigo v1.4.6
@@ -22,7 +21,7 @@ require (
 	github.com/rustyoz/svg v0.0.0-20240415061046-5415eb8d083c
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	github.com/unidoc/unipdf/v3 v3.59.0
-	golang.org/x/term v0.21.0
+	golang.org/x/term v0.22.0
 )
 
 require (
@@ -50,7 +49,7 @@ require (
 	golang.org/x/exp v0.0.0-20240613232115-7f521ea00fb8 // indirect
 	golang.org/x/image v0.17.0 // indirect
 	golang.org/x/net v0.26.0 // indirect
-	golang.org/x/sys v0.21.0 // indirect
+	golang.org/x/sys v0.22.0 // indirect
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
