@@ -20,7 +20,7 @@ require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/rustyoz/svg v0.0.0-20240415061046-5415eb8d083c
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
-	github.com/unidoc/unipdf/v3 v3.60.0
+	github.com/unidoc/unipdf/v3 v3.61.0
 	golang.org/x/image v0.19.0
 	golang.org/x/term v0.23.0
 )
@@ -28,10 +28,11 @@ require (
 require (
 	github.com/adrg/strutil v0.3.1 // indirect
 	github.com/adrg/sysfont v0.1.2 // indirect
-	github.com/adrg/xdg v0.4.0 // indirect
+	github.com/adrg/xdg v0.5.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/gabriel-vasile/mimetype v1.4.4 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.5 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
+	github.com/gorilla/i18n v0.0.0-20150820051429-8b358169da46 // indirect
 	github.com/huandu/xstrings v1.5.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -45,12 +46,13 @@ require (
 	github.com/unidoc/freetype v0.2.3 // indirect
 	github.com/unidoc/pkcs7 v0.2.0 // indirect
 	github.com/unidoc/timestamp v0.0.0-20200412005513-91597fd3793a // indirect
+	github.com/unidoc/unichart v0.3.0 // indirect
 	github.com/unidoc/unitype v0.4.0 // indirect
 	golang.org/x/crypto v0.26.0 // indirect
 	golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa // indirect
 	golang.org/x/net v0.28.0 // indirect
 	golang.org/x/sys v0.24.0 // indirect
 	golang.org/x/text v0.17.0 // indirect
-	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
+	golang.org/x/xerrors v0.0.0-20240716161551-93cc26a95ae9 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
