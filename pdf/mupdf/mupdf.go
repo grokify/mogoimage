@@ -7,6 +7,7 @@ import (
 	fitz "github.com/gen2brain/go-fitz"
 	"github.com/grokify/mogo/errors/errorsutil"
 	"github.com/grokify/mogo/image/imageutil"
+	"github.com/grokify/mogo/image/imageutil/padding"
 	"golang.org/x/image/draw"
 )
 
@@ -32,10 +33,13 @@ func ConvertFilePageToImage(filename string, pageIndex uint) (image.Image, error
 	}
 }
 
-func ConvertFilePageToPNGFile(srcPath, outPath string, pageIndex, width, height uint, scaler draw.Scaler) error {
+func ConvertFilePageToPNGFile(srcPath, outPath string, pageIndex, width, height uint, scaler draw.Scaler, isPadding padding.IsPaddingFunc) error {
 	if img, err := ConvertFilePageToImage(srcPath, pageIndex); err != nil {
 		return err
 	} else {
+		if isPadding != nil {
+			img = imageutil.CropPadding(img, isPadding)
+		}
 		if width > 0 || height > 0 {
 			img = imageutil.Resize(width, height, img, scaler)
 		}
