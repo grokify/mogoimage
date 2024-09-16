@@ -20,7 +20,7 @@ require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/rustyoz/svg v0.0.0-20240415061046-5415eb8d083c
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
-	github.com/unidoc/unipdf/v3 v3.61.0
+	github.com/unidoc/unipdf/v3 v3.62.0
 	golang.org/x/image v0.19.0
 	golang.org/x/term v0.23.0
 )
