@@ -13,7 +13,7 @@ require (
 	github.com/esimov/pigo v1.4.6
 	github.com/fogleman/gg v1.3.0
 	github.com/fogleman/primitive v0.0.0-20200504002142-0373c216458b
-	github.com/gen2brain/go-fitz v1.23.7
+	github.com/gen2brain/go-fitz v1.24.11
 	github.com/grokify/mogo v0.64.11
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/lucasb-eyer/go-colorful v1.2.0
