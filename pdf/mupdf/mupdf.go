@@ -7,7 +7,7 @@ import (
 	fitz "github.com/gen2brain/go-fitz"
 	"github.com/grokify/mogo/errors/errorsutil"
 	"github.com/grokify/mogo/image/imageutil"
-	"github.com/grokify/mogo/image/imageutil/padding"
+	"github.com/grokify/mogo/image/padding"
 	"golang.org/x/image/draw"
 )
 
