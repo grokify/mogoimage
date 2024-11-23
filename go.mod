@@ -14,29 +14,29 @@ require (
 	github.com/fogleman/gg v1.3.0
 	github.com/fogleman/primitive v0.0.0-20200504002142-0373c216458b
 	github.com/gen2brain/go-fitz v1.24.14
-	github.com/grokify/mogo v0.64.11
+	github.com/grokify/mogo v0.65.5
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/rustyoz/svg v0.0.0-20240916132020-37383a9eebb1
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
-	github.com/unidoc/unipdf/v3 v3.62.0
-	golang.org/x/image v0.21.0
-	golang.org/x/term v0.25.0
+	github.com/unidoc/unipdf/v3 v3.63.0
+	golang.org/x/image v0.22.0
+	golang.org/x/term v0.26.0
 )
 
 require (
 	github.com/adrg/strutil v0.3.1 // indirect
 	github.com/adrg/sysfont v0.1.2 // indirect
-	github.com/adrg/xdg v0.5.0 // indirect
+	github.com/adrg/xdg v0.5.3 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/ebitengine/purego v0.8.0 // indirect
-	github.com/gabriel-vasile/mimetype v1.4.5 // indirect
+	github.com/ebitengine/purego v0.8.1 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.7 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/gorilla/i18n v0.0.0-20150820051429-8b358169da46 // indirect
 	github.com/huandu/xstrings v1.5.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/jupiterrider/ffi v0.2.0 // indirect
+	github.com/jupiterrider/ffi v0.2.1 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
@@ -50,11 +50,11 @@ require (
 	github.com/unidoc/timestamp v0.0.0-20200412005513-91597fd3793a // indirect
 	github.com/unidoc/unichart v0.3.0 // indirect
 	github.com/unidoc/unitype v0.4.0 // indirect
-	golang.org/x/crypto v0.28.0 // indirect
-	golang.org/x/exp v0.0.0-20241004190924-225e2abe05e6 // indirect
-	golang.org/x/net v0.30.0 // indirect
-	golang.org/x/sys v0.26.0 // indirect
-	golang.org/x/text v0.19.0 // indirect
+	golang.org/x/crypto v0.29.0 // indirect
+	golang.org/x/exp v0.0.0-20241108190413-2d47ceb2692f // indirect
+	golang.org/x/net v0.31.0 // indirect
+	golang.org/x/sys v0.27.0 // indirect
+	golang.org/x/text v0.20.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
